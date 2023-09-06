@@ -64,12 +64,12 @@ public class DataStorageImpl implements DataStorage {
 
     @Override
     public List<String> findManyAndMapEachToString(Predicate<Person> filter, Function<Person, String> personToString) {
-      List<String> result = new ArrayList<>();
-        List<Person> filteredList =  findMany(filter);
+        List<String> result = new ArrayList<>();
+        List<Person> filteredList = findMany(filter);
         for (Person person : filteredList) {
             result.add(personToString.apply(person));
         }
-      return result;
+        return result;
     }
 
     @Override

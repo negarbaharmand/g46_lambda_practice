@@ -1,28 +1,28 @@
 package se.lexicon;
 
 import se.lexicon.data.DataStorage;
+import se.lexicon.model.Gender;
+import se.lexicon.model.Person;
+
+import java.util.List;
 
 public class Exercises {
 
     private final static DataStorage storage = DataStorage.INSTANCE;
 
-    /*
-       TODO:  1.	Find everyone that has firstName: “Erik” using findMany().
-    */
+
     public static void exercise1(String message) {
         System.out.println(message);
-        //Write your code here
-
+        List<Person> erikPersons = storage.findMany(person -> person.getFirstName().equals("Erik"));
+        erikPersons.forEach(System.out::println);
         System.out.println("----------------------");
     }
 
-    /*
-        TODO:  2.	Find all females in the collection using findMany().
-     */
+
     public static void exercise2(String message) {
         System.out.println(message);
-        //Write your code here
-
+        List<Person> females = storage.findMany(person -> person.getGender().equals(Gender.FEMALE));
+        females.forEach(System.out::println);
         System.out.println("----------------------");
     }
 
