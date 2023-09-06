@@ -25,11 +25,11 @@ public class DataStorageImpl implements DataStorage {
 
     private final List<Person> personList;
 
-    private DataStorageImpl(){
+    private DataStorageImpl() {
         personList = PersonGenerator.getInstance().generate(1000);
     }
 
-    static DataStorage getInstance(){
+    static DataStorage getInstance() {
         return INSTANCE;
     }
 
@@ -37,8 +37,8 @@ public class DataStorageImpl implements DataStorage {
     @Override
     public List<Person> findMany(Predicate<Person> filter) {
         List<Person> result = new ArrayList<>();
-        for(Person person : personList){
-            if(filter.test(person)){
+        for (Person person : personList) {
+            if (filter.test(person)) {
                 result.add(person);
             }
         }
@@ -47,30 +47,36 @@ public class DataStorageImpl implements DataStorage {
 
     @Override
     public Person findOne(Predicate<Person> filter) {
+        // todo: implement the method
         return null;
     }
 
     @Override
-    public String findOneAndMapToString(Predicate<Person> filter, Function<Person, String> personToString){
+    public String findOneAndMapToString(Predicate<Person> filter, Function<Person, String> personToString) {
+        // todo: implement the method
         return null;
     }
 
     @Override
-    public List<String> findManyAndMapEachToString(Predicate<Person> filter, Function<Person, String> personToString){
-       return null;
+    public List<String> findManyAndMapEachToString(Predicate<Person> filter, Function<Person, String> personToString) {
+        // todo: implement the method
+        return null;
     }
 
     @Override
-    public void findAndDo(Predicate<Person> filter, Consumer<Person> consumer){
+    public void findAndDo(Predicate<Person> filter, Consumer<Person> consumer) {
+        // todo: implement the method
     }
 
     @Override
-    public List<Person> findAndSort(Comparator<Person> comparator){
-       return null;
+    public List<Person> findAndSort(Comparator<Person> comparator) {
+        // todo: implement the method
+        return null;
     }
 
     @Override
-    public List<Person> findAndSort(Predicate<Person> filter, Comparator<Person> comparator){
-       return null;
+    public List<Person> findAndSort(Predicate<Person> filter, Comparator<Person> comparator) {
+        // todo: implement the method
+        return null;
     }
 }
