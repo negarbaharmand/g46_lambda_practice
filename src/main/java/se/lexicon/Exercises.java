@@ -4,6 +4,7 @@ import se.lexicon.data.DataStorage;
 import se.lexicon.model.Gender;
 import se.lexicon.model.Person;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Exercises {
@@ -26,22 +27,21 @@ public class Exercises {
         System.out.println("----------------------");
     }
 
-    /*
-        TODO:  3.	Find all who are born after (and including) 2000-01-01 using findMany().
-     */
+
     public static void exercise3(String message) {
         System.out.println(message);
-        //Write your code here
+        List<Person> bornAfter2000 = storage.findMany(person -> person.getBirthDate().isAfter(LocalDate.of(2000, 1, 1)));
+        bornAfter2000.forEach(System.out::println);
+
 
         System.out.println("----------------------");
     }
 
-    /*
-        TODO: 4.	Find the Person that has an id of 123 using findOne().
-     */
+
     public static void exercise4(String message) {
         System.out.println(message);
-        //Write your code here
+        Person id123 = storage.findOne(person -> person.getId() == 123);
+        System.out.println(id123);
 
         System.out.println("----------------------");
 
